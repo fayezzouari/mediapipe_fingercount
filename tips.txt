@@ -1,0 +1,47 @@
+tf.keras.layers.Conv2D(64, (3, 3), activation='relu', input_shape=(150, 150, 3)):
+
+64: This represents the number of filters (also known as kernels or feature detectors) that the convolutional layer will use. Each filter will learn different features from the input data. In this case, there will be 64 filters.
+
+(3, 3): This is the size of each filter. The convolutional filters will be 3x3 in dimensions. The size of the filter determines the spatial extent of the features the filter can detect.
+
+activation='relu': This specifies the activation function used in the layer. In this case, the ReLU (Rectified Linear Unit) activation function will be used after the convolution operation. ReLU is commonly used in convolutional neural networks (CNNs) to introduce non-linearity to the model.
+
+input_shape=(150, 150, 3): This specifies the shape of the input data that will be passed to the convolutional layer. The input data is expected to be in the form of images with a size of 150x150 pixels and with 3 color channels (RGB).
+
+In summary, the tf.keras.layers.Conv2D layer with these arguments will apply 64 filters of size 3x3 to the input images of size 150x150 pixels and 3 color channels. The ReLU activation function will be applied to the output of this convolutional layer. This is a common configuration used in CNNs for image processing tasks.
+
+
+
+tf.keras.layers.MaxPooling2D(pool_size=(2, 2))
+
+pool_size=(2, 2): This argument specifies the size of the pooling window. The MaxPooling operation is applied to the input data using a sliding window of size 2x2. During pooling, the maximum value within each 2x2 window is taken and retained in the output, while the other values are discarded. The pooling operation reduces the spatial dimensions of the data, effectively downsampling it.
+
+[[1, 2, 3, 4, 5, 6],
+ [7, 8, 9, 10, 11, 12],
+ [13, 14, 15, 16, 17, 18],
+ [19, 20, 21, 22, 23, 24],
+ [25, 26, 27, 28, 29, 30],
+ [31, 32, 33, 34, 35, 36]]
+
+
+[[8, 10, 12],
+ [20, 22, 24],
+ [32, 34, 36]]
+
+
+tf.keras.layers.Dropout(0.5) --> tkharej classes that have less than 0.5 prediction will be put to 0 as an output data
+
+0.5: This argument specifies the dropout rate. Dropout is a regularization technique used to prevent overfitting in neural networks. The dropout rate determines the probability at which each neuron's output in the previous layer will be set to zero during training.
+
+[1, 2, 3, 4, 5]
+
+[0, 2, 0, 4, 5]
+
+
+tf.keras.layers.Dense(3, activation='softmax')
+
+The softmax activation function is commonly used for multi-class classification problems. It takes a vector of real numbers as input and converts it into a probability distribution. The output values of the softmax function are non-negative and sum up to 1, representing the probabilities of the input belonging to each class.
+
+softmax([2.0, 1.0, 0.1]) = [0.659, 0.242, 0.099]
+
+
